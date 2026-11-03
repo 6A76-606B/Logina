@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسالة خاصة</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdf2f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 450px;
+            line-height: 1.8;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button, a.button {
+            padding: 10px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            font-family: inherit;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .agree {
+            background-color: #4CAF50;
+        }
+        .agree:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        .disagree {
+            background-color: #f44336;
+        }
+        .disagree:hover {
+            background-color: #da190b;
+            transform: scale(1.05);
+        }
+        .thanks-msg {
+            font-size: 24px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-box">
+        <p>الصراحة انا عحبتني شخصيتك وعايز نتكلم مع بعض اكتر وانا مكسوف اقولك كدة في الشات ومتوافقيش بس بجد في الحالتين هتفضلي حاجة مميزة عندي  واوعدك    لو وافقتي مش هتبقي شخص عادي بكلمه لا هتبقي انت اختي الوحيدة لاني معنديش اخوات بنات وفعلا مش بقولك الكلام دة علشان حاجة او نية وحشة انا شايفك اختي   وانا مش هبعتلك حاجة لحد ما تفكري براحتك</p>
+        <div class="buttons">
+            <!-- 20 is the country code for Egypt -->
+            <a href="https://wa.me/201094393622?text=%D8%A3%D9%86%D8%A7%20%D9%85%D9%88%D8%A7%D9%81%D9%82%D8%A9" class="button agree">موافقة</a>
+            <button class="button disagree" onclick="reject()">مش موافقة</button>
+        </div>
+    </div>
+
+    <script>
+        function reject() {
+            document.getElementById('main-box').innerHTML = '<h2 class="thanks-msg">شكراً</h2>';
+            setTimeout(function() {
+                // Attempts to close the window (works best if opened via script)
+                window.close();
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
